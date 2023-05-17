@@ -8,67 +8,13 @@ Creiamo un set di dati in forma di array di oggetti e stampiamoli a schermo in u
 Nella card, indichiamo anche che tipo di prodotto stiamo visualizzando (desktop, laptop) creando un apposito metodo poliforfo in ciascuna sottoclasse 
 -->
 
-
 <?php
 
-class Computer
-{
-    public $processore;
-    public $memoria;
-    public $sistema;
-    public $archiviazione;
-
-    public function __construct(string $processore, string $memoria, string $sistema, string $archiviazione)
-    {
-        $this->processore = $processore;
-        $this->memoria = $memoria;
-        $this->sistema = $sistema;
-        $this->archiviazione = $archiviazione;
-    }
-}
-
-
-class Desktop extends Computer
-{
-    public $case;
-    public $alimentazione;
-    public $sistema;
-    public $raffreddamento;
-
-    public function __construct(string $processore, string $memoria, string $sistema, string $archiviazione, string $case, string $alimentazione, string $raffreddamento)
-    {
-        parent::__construct($processore, $memoria, $sistema, $archiviazione);
-        $this->case = $case;
-        $this->alimentazione = $alimentazione;
-        $this->raffreddamento = $raffreddamento;
-    }
-}
-
-
-class Portatile extends Computer
-
-{
-    public $display;
-    public $mousepad;
-    public $batteria;
-    public $webcam;
-
-    public function __construct($processore, $memoria, $sistema, $archiviazione, $display, $mousepad, $batteria, $webcam)
-
-    {
-        parent::__construct($processore, $memoria, $sistema, $archiviazione);
-        $this->display = $display;
-        $this->mousepad = $mousepad;
-        $this->batteria = $batteria;
-        $this->webcam = $webcam;
-    }
-}
-
-
+include __DIR__ . "/Computer.php";
+include __DIR__ . "/Desktop.php";
+include __DIR__ . "/Portatile.php";
 
 ?>
-
-
 
 <head>
     <meta charset="UTF-8">
@@ -80,14 +26,11 @@ class Portatile extends Computer
 </head>
 
 <body>
+    <div class="container">
+        <?php foreach ($computers as $computer) : ?>
 
-
-
-    <div class="container ">
-
+        <?php endforeach ?>
     </div>
-
-
 </body>
 
 </html>
