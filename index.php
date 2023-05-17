@@ -13,48 +13,34 @@ Nella card, indichiamo anche che tipo di prodotto stiamo visualizzando (desktop,
 
 class Computer
 {
-    public $Processore;
-    public $Memoria;
-    public $Sistema;
-    public $Archiviazione;
+    public $processore;
+    public $memoria;
+    public $sistema;
+    public $archiviazione;
 
-    public function __construct(string $Processore, string $Memoria, string $Sistema, string $Archiviazione)
+    public function __construct(string $processore, string $memoria, string $sistema, string $archiviazione)
     {
-        $this->Processore = $Processore;
-        $this->Memoria = $Memoria;
-        $this->Sistema = $Sistema;
-        $this->Archiviazione = $Archiviazione;
-    }
-    public function nuovoFilm()
-    {
-        echo "Processore: " . $this->Processore;
-        echo "Memoria: " . $this->Memoria;
-        echo "Sistema: " . $this->Sistema;
-        echo "Archiviazione: " . $this->Archiviazione;
+        $this->processore = $processore;
+        $this->memoria = $memoria;
+        $this->sistema = $sistema;
+        $this->archiviazione = $archiviazione;
     }
 }
 
 
 class Desktop extends Computer
 {
-    public $Case;
-    public $Alimentazione;
-    public $Sistema;
-    public $Raffreddamento;
+    public $case;
+    public $alimentazione;
+    public $sistema;
+    public $raffreddamento;
 
-    public function __construct(string $Case, string $Alimentazione, string $Sistema, string $Raffreddamento)
+    public function __construct(string $processore, string $memoria, string $sistema, string $archiviazione, string $case, string $alimentazione, string $raffreddamento)
     {
-        $this->Case = $Case;
-        $this->Alimentazione = $Alimentazione;
-        $this->Sistema = $Sistema;
-        $this->Raffreddamento = $Raffreddamento;
-    }
-    public function nuovoFilm()
-    {
-        echo "Case: " . $this->Case;
-        echo "Alimentazione: " . $this->Alimentazione;
-        echo "Sistema: " . $this->Sistema;
-        echo "Raffreddamento: " . $this->Raffreddamento;
+        parent::__construct($processore, $memoria, $sistema, $archiviazione);
+        $this->case = $case;
+        $this->alimentazione = $alimentazione;
+        $this->raffreddamento = $raffreddamento;
     }
 }
 
@@ -62,28 +48,26 @@ class Desktop extends Computer
 class Portatile extends Computer
 
 {
-    public $Display;
-    public $Mousepad;
-    public $Batteria;
-    public $Webcam;
+    public $display;
+    public $mousepad;
+    public $batteria;
+    public $webcam;
 
-    public function __construct(string $Display, string $Mousepad, string $Batteria, string $Webcam)
+    public function __construct($processore, $memoria, $sistema, $archiviazione, $display, $mousepad, $batteria, $webcam)
+
     {
-        $this->Display = $Display;
-        $this->Mousepad = $Mousepad;
-        $this->Batteria = $Batteria;
-        $this->Webcam = $Webcam;
-    }
-    public function nuovoFilm()
-    {
-        echo "Display: " . $this->Display;
-        echo "Mousepad: " . $this->Mousepad;
-        echo "Batteria: " . $this->Batteria;
-        echo "Webcam: " . $this->Webcam;
+        parent::__construct($processore, $memoria, $sistema, $archiviazione);
+        $this->display = $display;
+        $this->mousepad = $mousepad;
+        $this->batteria = $batteria;
+        $this->webcam = $webcam;
     }
 }
 
+
+
 ?>
+
 
 
 <head>
