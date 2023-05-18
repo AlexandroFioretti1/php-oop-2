@@ -13,6 +13,8 @@ Nella card, indichiamo anche che tipo di prodotto stiamo visualizzando (desktop,
 include __DIR__ . "/Computer.php";
 include __DIR__ . "/Desktop.php";
 include __DIR__ . "/Portatile.php";
+include __DIR__ . "/db.php";
+
 
 ?>
 
@@ -26,11 +28,32 @@ include __DIR__ . "/Portatile.php";
 </head>
 
 <body>
-    <div class="container">
-        <?php foreach ($computers as $computer) : ?>
 
-        <?php endforeach ?>
-    </div>
+    <?php foreach ($computers as $computer) : ?>
+        <div class="col-6 mx-auto">
+            <div class="card m-4">
+                <div class="card-header">
+                    <h3><?php echo $computer->marca ?></h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>
+                            <h6><?php echo $computer->processore ?></h6>
+                        </li>
+                        <li>
+                            <h6><?php echo $computer->memoria ?></h6>
+                        </li>
+                        <li>
+                            <h6><?php echo $computer->sistema ?></h6>
+                        </li>
+                        <li>
+                            <h6><?php echo $computer->schedavideo ?></h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <?php endforeach ?>
 </body>
 
 </html>
